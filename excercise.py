@@ -1,12 +1,24 @@
 class Task:
 
+    def __init__(self, description, due_date):
+        self.description = description
+        self.due_date = due_date
+
+class TodoList:
+
     def __init__(self):
-        pass
+        self.task_list = []
 
-    def description(self, describe_task):
-        self.describe_task = describe_task
-        return "The task is {}".format (self.describe_task)
+    def add_task (self, taskvar):
+        self.task_list.append(taskvar)
 
-    def due_date(self, date):
-        self.date = date
-        return "The due date is {}".format(self.date)
+
+laundry = Task('Clean your clothes', 'July 21')
+vacuum = Task('Clean your floors', 'July 21')
+groceries = Task('Buy food', 'July 20')
+
+julylist = TodoList()
+
+julylist.add_task(laundry)
+julylist.add_task(vacuum)
+julylist.add_task(groceries)
